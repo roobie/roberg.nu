@@ -1,0 +1,39 @@
+body {
+    background: #333;
+    color: #eee;
+}
+header {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+header h1 {
+    display: inline-block;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ol {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ol li {
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+nav a {
+    font-weight: bold;
+    color: cornflowerblue;
+}
+nav a.active {
+    color: salmon;
+}
+
+.top-spacer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
