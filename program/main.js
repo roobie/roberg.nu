@@ -6,6 +6,8 @@
   var URL = global.URL;
   var fetch = global.fetch;
 
+  var moment = global.moment;
+
 
   // "aliases"
   var qs = document.querySelector.bind(document);
@@ -31,8 +33,26 @@
   var rootHash = '#/';
   var activeClass = 'active';
 
+  var modules = {
+    timeAgo: function (elem, data) {
+      var date = new Date(data);
+      var mom = moment(date);
+      elem.innerHTML = mom.fromNow();
+    }
+  };
 
-  var handleNavChange = function (nodes) {
+  var hook = function (element) {
+    var keys = Object.keys(element.dataset);
+    each(keys, function (k) {
+      var module = modules[k];
+      var data = element.dataset[k];
+      if (module) {
+        module(element, data);
+      }
+    });
+  };
+
+  var handleNavChange = function (nodes, container) {
     if (empty(location.hash)) {
       location.hash = rootHash;
     }
@@ -42,10 +62,13 @@
     };
 
     var insertContent = function (html) {
-      var container = qs('#content-here');
-      if (container) {
-        container.innerHTML = html;
-      }
+      container.innerHTML = html;
+      var newElements = qsa('#content-here *');
+      each(newElements, function (elem) {
+        if (Object.keys(elem.dataset).length) {
+          hook(elem);
+        }
+      });
     };
 
     each(nodes, function (node) {
@@ -71,10 +94,10 @@
 
   var initialise = function () {
     var nodes = qsa('nav a');
-    handleNavChange(nodes);
+    var contentContainer = qs('#content-here');
+    handleNavChange(nodes, contentContainer);
     global.addEventListener('hashchange', function () {
-
-      handleNavChange(nodes);
+      handleNavChange(nodes, contentContainer);
     });
     hookupNavEvents(nodes);
   };

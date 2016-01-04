@@ -2,9 +2,9 @@ body {
     background: #333;
     color: #eee;
 }
+
 header {
-    display: flex;
-    flex-flow: row wrap;
+    justify-content: space-between;
 }
 
 header h1 {
@@ -36,4 +36,49 @@ nav a.active {
 .top-spacer {
     margin-top: 1rem;
     margin-bottom: 1rem;
+}
+
+.footer-content {
+    display: flex;
+}
+
+.powered-by {
+    color: #aaa;
+}
+
+.powered-by h5 {
+    margin-bottom: 0;
+}
+
+.powered-by ul {
+    list-style: none;
+}
+
+.powered-by ul li {
+    margin-right: 1rem;
+}
+
+.powered-by ul li:before {
+    content: "|";
+}
+
+.sequence {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.subtle {
+    color: #666;
+}
+
+#lambda {
+    font-family: serif;
+    font-size: 256px;
+    color: cornflowerblue;
+    text-shadow: 4px 4px 32px salmon;
+    position: absolute;
+    float: left;
+    opacity: 0.1;
+    right: 32px;
+    z-index: -9999;
 }

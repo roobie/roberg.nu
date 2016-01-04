@@ -25,7 +25,7 @@
 
     <!-- Favicon
          –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
+	  <link rel="shortcut icon" href="/favicon.ico">
 
   </head>
   <body>
@@ -33,39 +33,81 @@
     <!-- Primary Page Layout
          –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <div class="container">
+      <span id="lambda">λ</span>
       <div class="row">
         <div class="twelve column">
 
-          <header>
+          <header class="sequence">
+            <h1>Roberg.nu</h1>
             <nav>
               <ol>
-                <li><a data-name="root" href="#/">/root</a></li>
-                <li>/opinions</li>
-                <li>/rants</li>
-                <li>/cv</li>
-                <li><a data-name="about" href="#/about">/about</a></li>
+                <li><a data-name="root"
+                       href="#/">/root</a></li>
+                <li><a data-name="opinions"
+                       href="#/opinions">/opinions</a></li>
+                <li><a data-name="rants"
+                       href="#/rants">/rants</a></li>
+                <li><a data-name="cv"
+                       href="#/cv">/cv</a></li>
+                <li><a data-name="about"
+                       href="#/about">/about</a></li>
               </ol>
             </nav>
-
-            <h1>Roberg.nu</h1>
-
           </header>
 
           <hr class="top-spacer"/>
 
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="twelve column">
           <section class="content" id="content-here">
           </section>
-
-          <footer>
-          </footer>
-
         </div>
+      </div>
+
+      <div class="footer-content row">
+        <footer>
+          <section class="powered-by">
+            <h5>Powered by</h5>
+              <ul class="sequence">
+                <li>
+                  electricity (probably nuclear)</li>
+                <li>
+                  Internet</li>
+                <li>
+                  Digital Ocean (hosting)</li>
+                <li>
+                  FreeBSD (server)</li>
+                <li>
+                  Arch Linux (development)</li>
+                <li>
+                  Emacs</li>
+                <li>
+                  Vim</li>
+                <li>
+                  NGINX</li>
+                <li>
+                  ECMAScript (JS)</li>
+                <li>
+                  HTML5</li>
+                <li>
+                  CSS3</li>
+                <li>
+                  <a href="http://getskeleton.com/">Skeleton</a></li>
+                <li>
+                  &hellip;</li>
+              </ul>
+          </section>
+        </footer>
       </div>
     </div>
 
     <div class="scripts">
       <script src="//cdnjs.cloudflare.com/ajax/libs/fetch/0.10.1/fetch.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/es6-promise/3.0.2/es6-promise.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.0/moment.min.js"></script>
       <script src="program/main.js"></script>
     </div>
 
